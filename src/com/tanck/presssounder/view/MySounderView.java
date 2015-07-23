@@ -40,6 +40,7 @@ public class MySounderView extends TextView {
 				Log.d("Tanck", "开始录音");
 				String fileSrc = String.valueOf(System.currentTimeMillis());
 //				listener.onStartRecord(fileSrc);
+				
 				msounder.start(fileSrc);
 			}
 		};
