@@ -30,7 +30,7 @@ public class MySounderView extends TextView {
 
 	private OnRecordListener listener;
 
-	public void setListener(OnRecordListener listener) {
+	public void setOnRecordListener(OnRecordListener listener) {
 		this.listener = listener;
 	}
 
@@ -39,7 +39,7 @@ public class MySounderView extends TextView {
 			if (0x1 == msg.what && !isDoubleClicked) {
 				Log.d("Tanck", "开始录音");
 				String fileSrc = String.valueOf(System.currentTimeMillis());
-//				listener.onStartRecord(fileSrc);
+				// listener.onStartRecord(fileSrc);
 				msounder.start(fileSrc);
 			}
 		};
@@ -60,8 +60,6 @@ public class MySounderView extends TextView {
 
 	private void initView() {
 		msounder = new SoundMeter();
-		if (null == listener)
-			throw new IllegalArgumentException("you need set interface");
 	}
 
 	@Override
